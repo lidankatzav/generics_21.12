@@ -7,6 +7,7 @@ function countElementsByProperty<T>(array: T[], prop: Property<T>): number {
     const arrAfterFilter = array.filter((value) => 
         prop.isProperty(value));
     return arrAfterFilter.length;
+
 }
 
 class OddProperty implements Property<number> {
@@ -16,6 +17,7 @@ class OddProperty implements Property<number> {
     }
 
 }
+
 class PrimeProperty implements Property<number> {
 
     isProperty(element: number): boolean {
@@ -47,6 +49,7 @@ class PalindromeProperty implements Property<string | number> {
 
     }
 }
+
 class Person {
 
     public name: string;
@@ -65,6 +68,7 @@ class PersonPalindromeProperty implements Property<Person> {
         const palindromeProp = new PalindromeProperty();
         return palindromeProp.isProperty(element.id);
     }
+    
 }
 
 console.log(countElementsByProperty([1,2,3,4,5], new OddProperty));
